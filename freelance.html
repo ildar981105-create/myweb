@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>设计接单 — 伊力达尔 · B端交互设计师</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="freelance.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- 导航 -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="logo">I<span class="logo__dot">.</span></a>
+      <nav class="nav" id="nav">
+        <a href="index.html" class="nav__link" data-index="00">首页</a>
+        <a href="#services" class="nav__link" data-index="01">服务</a>
+        <a href="#portfolio-service" class="nav__link" data-index="02">作品集建站</a>
+        <a href="#process" class="nav__link" data-index="03">流程</a>
+        <a href="#pricing" class="nav__link" data-index="04">报价</a>
+        <a href="#faq" class="nav__link" data-index="05">FAQ</a>
+        <a href="#contact-fl" class="nav__link" data-index="06">联系</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="菜单">
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 移动端菜单 -->
+  <div class="overlay" id="overlay">
+    <nav class="overlay__nav">
+      <a href="index.html" class="overlay__link">首页</a>
+      <a href="#services" class="overlay__link">服务</a>
+      <a href="#portfolio-service" class="overlay__link">作品集建站</a>
+      <a href="#process" class="overlay__link">流程</a>
+      <a href="#pricing" class="overlay__link">报价</a>
+      <a href="#faq" class="overlay__link">FAQ</a>
+      <a href="#contact-fl" class="overlay__link">联系</a>
+    </nav>
+  </div>
+
+  <!-- 首屏 Hero -->
+  <section class="fl-hero" id="fl-hero">
+    <canvas id="gridCanvas"></canvas>
+    <div class="hero__glow"></div>
+    <div class="fl-hero__content">
+      <div class="hero__label anim-fade" data-delay="0">
+        <span class="label-dot"></span>
+        <span>正在接单中</span>
+      </div>
+      <p class="hero__greeting anim-fade" data-delay="100">你的作品集，值得被看见 —</p>
+      <h1 class="fl-hero__headline anim-fade" data-delay="200">
+        作品集<span class="hero__headline-accent">→</span>网站<span class="hero__headline-accent">，</span><br>
+        <span class="hero__headline-sub">一键上线，专业呈现</span>
+      </h1>
+      <p class="fl-hero__sub anim-fade" data-delay="300">
+        你只需提供现有作品集（Figma / PDF / PPT / 图片），<br class="hide-mobile">
+        我帮你做成可直接访问的个人网站，响应式 + 可部署 + 长期使用。
+      </p>
+      <div class="hero__cta anim-fade" data-delay="400">
+        <a href="#portfolio-service" class="btn">
+          <span>了解建站服务</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#contact-fl" class="btn btn--ghost">立即咨询</a>
+        <a href="index.html#work" class="btn btn--ghost">看看我的作品</a>
+      </div>
+
+      <!-- 信任指标 -->
+      <div class="fl-trust anim-fade" data-delay="500">
+        <div class="fl-trust__item">
+          <span class="fl-trust__num">3+</span>
+          <span class="fl-trust__label">年设计经验</span>
+        </div>
+        <div class="fl-trust__divider"></div>
+        <div class="fl-trust__item">
+          <span class="fl-trust__num">腾讯&小米</span>
+          <span class="fl-trust__label">大厂背景</span>
+        </div>
+        <div class="fl-trust__divider"></div>
+        <div class="fl-trust__item">
+          <span class="fl-trust__num">UAL</span>
+          <span class="fl-trust__label">硕士学位</span>
+        </div>
+        <div class="fl-trust__divider"></div>
+        <div class="fl-trust__item">
+          <span class="fl-trust__num">懂代码</span>
+          <span class="fl-trust__label">设计+开发</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 服务列表 -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__index">01</span>
+        <h2 class="section__title">服务内容</h2>
+        <p class="section__sub">主营作品集建站，同时提供 B 端设计与体验审查</p>
+      </div>
+
+      <div class="fl-services">
+        <!-- 主打服务 -->
+        <div class="fl-card fl-card--primary">
+          <div class="fl-card__icon fl-card__icon--portfolio">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z" stroke="currentColor" stroke-width="1.5"/><path d="M2 9h20" stroke="currentColor" stroke-width="1.5"/><circle cx="5" cy="6.5" r=".5" fill="currentColor"/><circle cx="7.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="10" cy="6.5" r=".5" fill="currentColor"/></svg>
+          </div>
+          <span class="fl-card__badge">核心业务</span>
+          <h3 class="fl-card__title">作品集建站</h3>
+          <p class="fl-card__desc">你已经有了作品集内容（Figma 设计稿、PDF、PPT、截图等），我把它变成一个可在线访问的个人作品集网站。不改你的内容，只负责呈现。</p>
+          <ul class="fl-card__list">
+            <li>接收你的现有作品素材（Figma / PDF / PPT / 图片）</li>
+            <li>转化为响应式网页（PC + Pad + Mobile）</li>
+            <li>定制视觉风格，匹配你的个人调性</li>
+            <li>前端代码开发 & 交付源码</li>
+            <li>部署上线 + 域名绑定指导</li>
+            <li>后续内容更新支持</li>
+          </ul>
+          <div class="fl-card__tag fl-card__tag--hot">主打服务</div>
+        </div>
+
+        <!-- 次要服务 1 -->
+        <div class="fl-card">
+          <div class="fl-card__icon fl-card__icon--interaction">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M17.5 14v3.5a1.5 1.5 0 01-1.5 1.5H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="17.5" cy="17.5" r="3.5" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3 class="fl-card__title">B 端交互设计</h3>
+          <p class="fl-card__desc">针对后台系统、SaaS 平台、数据看板等 B 端产品，提供专业的交互设计方案。</p>
+          <ul class="fl-card__list">
+            <li>信息架构 & 导航体系设计</li>
+            <li>核心流程交互原型（Figma）</li>
+            <li>复杂表单 & 表格交互方案</li>
+            <li>状态流转 & 异常处理设计</li>
+            <li>交互规范文档输出</li>
+          </ul>
+        </div>
+
+        <!-- 次要服务 2 -->
+        <div class="fl-card">
+          <div class="fl-card__icon fl-card__icon--review">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M9 11l3 3L22 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="fl-card__title">软件体验审查</h3>
+          <p class="fl-card__desc">以专业交互设计师视角审查你的产品体验，输出详细问题清单与优化建议。</p>
+          <ul class="fl-card__list">
+            <li>全流程体验走查报告</li>
+            <li>交互逻辑 & 一致性检查</li>
+            <li>可用性问题分级标注</li>
+            <li>竞品对比分析</li>
+            <li>优化方案 & 优先级建议</li>
+          </ul>
+          <div class="fl-card__tag fl-card__tag--new">设计师挑刺</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 作品集建站专项 -->
+  <section class="section section--alt" id="portfolio-service">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__index">02</span>
+        <h2 class="section__title">作品集建站</h2>
+        <p class="section__sub">你提供素材，我负责变成网站</p>
+      </div>
+
+      <!-- 流程图示 -->
+      <div class="fl-flow">
+        <div class="fl-flow__step">
+          <div class="fl-flow__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M14 2v6h6" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <h4>你提供素材</h4>
+          <p>Figma 稿 / PDF / PPT / 截图<br>任何格式都行</p>
+        </div>
+        <div class="fl-flow__arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="fl-flow__step">
+          <div class="fl-flow__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><polyline points="16,18 22,12 16,6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="8,6 2,12 8,18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h4>我来开发</h4>
+          <p>还原设计 + 响应式适配<br>前端代码编写</p>
+        </div>
+        <div class="fl-flow__arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="fl-flow__step">
+          <div class="fl-flow__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M2 12h20" stroke="currentColor" stroke-width="1.5"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h4>上线访问</h4>
+          <p>部署到服务器<br>绑定你的域名，永久可用</p>
+        </div>
+      </div>
+
+      <!-- 痛点 vs 方案 -->
+      <div class="fl-portfolio">
+        <div class="fl-portfolio__left">
+          <div class="fl-portfolio__pain">
+            <h3>你是不是遇到了这些问题？</h3>
+            <div class="fl-pain-list">
+              <div class="fl-pain-item">
+                <span class="fl-pain-icon">&#x2717;</span>
+                <span>作品集做好了，但只能发 PDF，不够专业</span>
+              </div>
+              <div class="fl-pain-item">
+                <span class="fl-pain-icon">&#x2717;</span>
+                <span>想有个人网站，但自己不会写代码</span>
+              </div>
+              <div class="fl-pain-item">
+                <span class="fl-pain-icon">&#x2717;</span>
+                <span>用 Notion / Behance 展示，限制太多、不够自定义</span>
+              </div>
+              <div class="fl-pain-item">
+                <span class="fl-pain-icon">&#x2717;</span>
+                <span>找开发做网站，他不懂设计，还原度差</span>
+              </div>
+              <div class="fl-pain-item">
+                <span class="fl-pain-icon">&#x2717;</span>
+                <span>面试 / 留学急用，没时间自己折腾</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fl-portfolio__right">
+          <div class="fl-portfolio__solution">
+            <h3>交给我来解决</h3>
+            <div class="fl-solution-list">
+              <div class="fl-solution-item">
+                <span class="fl-solution-icon">&#x2713;</span>
+                <div>
+                  <strong>高还原度</strong>
+                  <p>我本身是交互设计师 + 会写代码，设计稿还原度极高</p>
+                </div>
+              </div>
+              <div class="fl-solution-item">
+                <span class="fl-solution-icon">&#x2713;</span>
+                <div>
+                  <strong>你不用改内容</strong>
+                  <p>只需提供现有素材，我负责技术实现，你的内容你做主</p>
+                </div>
+              </div>
+              <div class="fl-solution-item">
+                <span class="fl-solution-icon">&#x2713;</span>
+                <div>
+                  <strong>响应式 + 可部署</strong>
+                  <p>PC / Pad / Mobile 全适配，直接部署上线长期使用</p>
+                </div>
+              </div>
+              <div class="fl-solution-item">
+                <span class="fl-solution-icon">&#x2713;</span>
+                <div>
+                  <strong>交付源码</strong>
+                  <p>所有代码交付给你，不绑定任何平台，自由修改</p>
+                </div>
+              </div>
+              <div class="fl-solution-item">
+                <span class="fl-solution-icon">&#x2713;</span>
+                <div>
+                  <strong>后续可迭代</strong>
+                  <p>需要更新项目或调整内容，随时找我，支持长期维护</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 支持的素材格式 -->
+      <div class="fl-formats">
+        <h3 class="fl-formats__title">支持的素材格式</h3>
+        <div class="fl-formats__grid">
+          <div class="fl-formats__item">
+            <span class="fl-formats__icon">F</span>
+            <span>Figma 设计稿</span>
+          </div>
+          <div class="fl-formats__item">
+            <span class="fl-formats__icon">P</span>
+            <span>PDF 文件</span>
+          </div>
+          <div class="fl-formats__item">
+            <span class="fl-formats__icon">S</span>
+            <span>Sketch 文件</span>
+          </div>
+          <div class="fl-formats__item">
+            <span class="fl-formats__icon">PPT</span>
+            <span>PPT / Keynote</span>
+          </div>
+          <div class="fl-formats__item">
+            <span class="fl-formats__icon">IMG</span>
+            <span>PNG / JPG 截图</span>
+          </div>
+          <div class="fl-formats__item">
+            <span class="fl-formats__icon">XD</span>
+            <span>Adobe XD</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 风格预览 -->
+      <div class="fl-showcase">
+        <h3 class="fl-showcase__title">网站风格参考</h3>
+        <div class="fl-showcase__grid">
+          <div class="fl-showcase__item">
+            <div class="fl-showcase__mock">
+              <div class="mock__bar"><span></span><span></span><span></span></div>
+              <div class="fl-showcase__screen fl-showcase__screen--dark">
+                <div class="fl-mock-hero"></div>
+                <div class="fl-mock-cards"><span></span><span></span><span></span></div>
+              </div>
+            </div>
+            <span class="fl-showcase__label">暗色科技风</span>
+          </div>
+          <div class="fl-showcase__item">
+            <div class="fl-showcase__mock">
+              <div class="mock__bar"><span></span><span></span><span></span></div>
+              <div class="fl-showcase__screen fl-showcase__screen--light">
+                <div class="fl-mock-hero fl-mock-hero--light"></div>
+                <div class="fl-mock-cards fl-mock-cards--light"><span></span><span></span><span></span></div>
+              </div>
+            </div>
+            <span class="fl-showcase__label">简约白净风</span>
+          </div>
+          <div class="fl-showcase__item">
+            <div class="fl-showcase__mock">
+              <div class="mock__bar"><span></span><span></span><span></span></div>
+              <div class="fl-showcase__screen fl-showcase__screen--creative">
+                <div class="fl-mock-hero fl-mock-hero--creative"></div>
+                <div class="fl-mock-cards fl-mock-cards--creative"><span></span><span></span><span></span></div>
+              </div>
+            </div>
+            <span class="fl-showcase__label">创意个性风</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 合作流程 -->
+  <section class="section" id="process">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__index">03</span>
+        <h2 class="section__title">合作流程</h2>
+        <p class="section__sub">简单 4 步，作品集变网站</p>
+      </div>
+
+      <div class="fl-process">
+        <div class="fl-process__step">
+          <div class="fl-process__num">01</div>
+          <div class="fl-process__line"></div>
+          <h4>发素材 + 聊需求</h4>
+          <p>微信发我你的作品集文件，简单沟通风格偏好和特殊需求。</p>
+          <span class="fl-process__time">10 分钟</span>
+        </div>
+        <div class="fl-process__step">
+          <div class="fl-process__num">02</div>
+          <div class="fl-process__line"></div>
+          <h4>确认方案 + 付定金</h4>
+          <p>我出报价和初步方案，你确认后付 50% 定金，开工。</p>
+          <span class="fl-process__time">Day 1</span>
+        </div>
+        <div class="fl-process__step">
+          <div class="fl-process__num">03</div>
+          <div class="fl-process__line"></div>
+          <h4>开发 + 预览</h4>
+          <p>我把作品集做成网站，期间你可随时查看进度、提修改意见。</p>
+          <span class="fl-process__time">Day 2-7</span>
+        </div>
+        <div class="fl-process__step">
+          <div class="fl-process__num">04</div>
+          <h4>上线交付</h4>
+          <p>确认没问题后部署上线，交付全部源码，付尾款。7 天免费售后。</p>
+          <span class="fl-process__time">Day 7-10</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 报价 -->
+  <section class="section section--alt" id="pricing">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__index">04</span>
+        <h2 class="section__title">参考报价</h2>
+        <p class="section__sub">按项目复杂度灵活定价</p>
+      </div>
+
+      <div class="fl-pricing">
+        <div class="fl-pricing__card fl-pricing__card--featured">
+          <div class="fl-pricing__badge">主打</div>
+          <div class="fl-pricing__head">
+            <h3>作品集建站</h3>
+            <p>你提供素材，我来做网站</p>
+          </div>
+          <div class="fl-pricing__price">
+            <span class="fl-pricing__currency">&#xffe5;</span>
+            <span class="fl-pricing__amount">2000</span>
+            <span class="fl-pricing__unit">起</span>
+          </div>
+          <ul class="fl-pricing__features">
+            <li>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              接收 Figma / PDF / PPT / 图片等素材
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              响应式网页开发（PC + Mobile）
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              定制视觉风格
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              部署上线 + 域名绑定
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              交付源码 + 2 轮修改
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              7-10 天交付
+            </li>
+          </ul>
+          <a href="#contact-fl" class="btn fl-pricing__btn">立即咨询</a>
+        </div>
+
+        <div class="fl-pricing__card">
+          <div class="fl-pricing__head">
+            <h3>B 端交互设计</h3>
+            <p>后台/SaaS/数据产品设计</p>
+          </div>
+          <div class="fl-pricing__price">
+            <span class="fl-pricing__currency">&#xffe5;</span>
+            <span class="fl-pricing__amount">5000</span>
+            <span class="fl-pricing__unit">起</span>
+          </div>
+          <ul class="fl-pricing__features">
+            <li>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              信息架构设计
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              高保真交互原型
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              交互规范文档
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              3 轮修改迭代
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              交付周期按需协商
+            </li>
+          </ul>
+          <a href="#contact-fl" class="btn btn--ghost fl-pricing__btn">开始咨询</a>
+        </div>
+
+        <div class="fl-pricing__card">
+          <div class="fl-pricing__head">
+            <h3>体验审查</h3>
+            <p>帮你的产品专业挑刺</p>
+          </div>
+          <div class="fl-pricing__price">
+            <span class="fl-pricing__currency">&#xffe5;</span>
+            <span class="fl-pricing__amount">800</span>
+            <span class="fl-pricing__unit">起</span>
+          </div>
+          <ul class="fl-pricing__features">
+            <li>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              全流程体验走查
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              问题清单 + 优化建议
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              竞品对比分析
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              3-5 天交付
+            </li>
+          </ul>
+          <a href="#contact-fl" class="btn btn--ghost fl-pricing__btn">开始咨询</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 为什么选择我 -->
+  <section class="section" id="why-me">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__index">05</span>
+        <h2 class="section__title">为什么找我做</h2>
+      </div>
+
+      <div class="fl-why">
+        <div class="fl-why__item">
+          <div class="fl-why__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polyline points="16,18 22,12 16,6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="8,6 2,12 8,18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h4>设计师 + 程序员</h4>
+          <p>不是纯开发，我自己就是交互设计师，懂设计也懂代码。还原度不是问题。</p>
+        </div>
+        <div class="fl-why__item">
+          <div class="fl-why__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h4>腾讯 + 小米背景</h4>
+          <p>在一线大厂做过复杂 B 端产品，对设计品质有高标准要求。</p>
+        </div>
+        <div class="fl-why__item">
+          <div class="fl-why__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M2 12h20" stroke="currentColor" stroke-width="1.5"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h4>UAL 海归硕士</h4>
+          <p>伦敦艺术大学硕士，国际化视野。中英文双语作品集都没问题。</p>
+        </div>
+        <div class="fl-why__item">
+          <div class="fl-why__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h4>交付源码</h4>
+          <p>代码全部给你，不绑定平台。你可以自由修改、迁移、长期使用。</p>
+        </div>
+        <div class="fl-why__item">
+          <div class="fl-why__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h4>快速交付</h4>
+          <p>作品集建站最快 7 天交付。急单可加急，提前沟通即可。</p>
+        </div>
+        <div class="fl-why__item">
+          <div class="fl-why__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <h4>沟通顺畅</h4>
+          <p>设计师对设计师，不用解释什么是「间距」「圆角」，秒懂你的需求。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--alt" id="faq">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__index">06</span>
+        <h2 class="section__title">常见问题</h2>
+      </div>
+
+      <div class="fl-faq">
+        <div class="fl-faq__item">
+          <button class="fl-faq__q" aria-expanded="false">
+            <span>我只有 PDF / 截图，没有 Figma 稿也可以吗？</span>
+            <svg class="fl-faq__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="fl-faq__a">
+            <p>完全可以。PDF、PPT、截图都行，我会根据你提供的内容重新排版成网页。当然如果有 Figma 源文件，还原度会更高、效率也更快。</p>
+          </div>
+        </div>
+        <div class="fl-faq__item">
+          <button class="fl-faq__q" aria-expanded="false">
+            <span>你会修改我的作品集内容吗？</span>
+            <svg class="fl-faq__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="fl-faq__a">
+            <p>不会。你的内容你做主，我只负责把它忠实地呈现为网页。如果你需要文案优化或内容调整建议，可以额外沟通，这部分可作为增值服务。</p>
+          </div>
+        </div>
+        <div class="fl-faq__item">
+          <button class="fl-faq__q" aria-expanded="false">
+            <span>网站做好之后我能自己更新内容吗？</span>
+            <svg class="fl-faq__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="fl-faq__a">
+            <p>源码完整交付给你。如果你有基础的 HTML 知识可以自己改。如果不会也没关系，后续需要更新内容可以随时找我，按次收费，通常很快能搞定。</p>
+          </div>
+        </div>
+        <div class="fl-faq__item">
+          <button class="fl-faq__q" aria-expanded="false">
+            <span>付款方式是怎样的？</span>
+            <svg class="fl-faq__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="fl-faq__a">
+            <p>50% 定金 + 50% 尾款。确认方案后付定金开工，交付验收后付尾款。支持微信、支付宝、银行转账。</p>
+          </div>
+        </div>
+        <div class="fl-faq__item">
+          <button class="fl-faq__q" aria-expanded="false">
+            <span>域名和服务器怎么搞？</span>
+            <svg class="fl-faq__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="fl-faq__a">
+            <p>我会帮你完成部署上线和域名绑定的全过程。静态网站的托管通常免费或极低成本（比如 GitHub Pages、Vercel、Netlify 等）。域名费用一般每年几十块，需要你自己注册持有。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系 -->
+  <section class="section" id="contact-fl">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__index">07</span>
+        <h2 class="section__title">开始合作</h2>
+        <p class="section__sub">描述你的需求，我会在 24 小时内回复</p>
+      </div>
+
+      <div class="contact">
+        <div class="contact__left">
+          <p class="contact__text">加微信发我你的作品集文件就行，简单聊聊需求，免费评估报价。</p>
+          <div class="contact__links">
+            <a href="mailto:daer2023app@163.com" class="contact__link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 7l10 6 10-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              daer2023app@163.com
+            </a>
+            <a href="#" class="contact__link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              微信: ildarrrrrrrr
+            </a>
+          </div>
+          <div class="fl-contact-tip">
+            <strong>加微信时请备注：</strong>
+            <p>作品集建站 / B端设计 / 体验审查（方便我快速回复）</p>
+          </div>
+        </div>
+        <form class="contact__form" id="contactForm">
+          <div class="form-row">
+            <input type="text" placeholder="你的名字" required>
+            <input type="email" placeholder="邮箱地址" required>
+          </div>
+          <select class="fl-select" id="serviceSelect">
+            <option value="" disabled selected>选择你需要的服务</option>
+            <option value="portfolio">作品集建站（主打）</option>
+            <option value="interaction">B 端交互设计</option>
+            <option value="review">软件体验审查</option>
+            <option value="other">其他 / 不确定</option>
+          </select>
+          <textarea rows="4" placeholder="简单描述你的需求，比如有什么格式的素材、希望什么风格等..." required></textarea>
+          <button type="submit" class="btn">
+            <span>发送消息</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 8h14M9 2l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="footer__copy">&copy; 2026 伊力达尔·阿不力孜</span>
+      <div class="footer__links">
+        <a href="index.html">个人主页</a>
+        <a href="index.html#work">作品集</a>
+        <a href="#">Dribbble</a>
+        <a href="#">Behance</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="freelance.js"></script>
+</body>
+</html>
