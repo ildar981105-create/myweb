@@ -314,8 +314,10 @@ img { display: block; max-width: 100%; }
 .company-dot {
   width: 10px; height: 10px; border-radius: 50%;
 }
-.company-dot--tc { background: #3b82f6; }
+.company-dot--tc { background: #006eff; }
+.company-dot--desk { background: #10b981; }
 .company-dot--mi { background: #f97316; }
+.company-dot--personal { background: #e11d48; }
 
 .work-list {
   display: grid;
@@ -576,6 +578,114 @@ img { display: block; max-width: 100%; }
 .mock__table-row--highlight {
   opacity: .6;
   border-left: 2px solid var(--accent);
+}
+
+/* Tideo mockup */
+.mock--tideo .mock__body { display: flex; flex-direction: column; gap: 10px; }
+.mock__tideo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.mock__tideo-card {
+  height: 36px;
+  background: var(--surface-2);
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+.mock__tideo-bar { display: flex; gap: 4px; }
+.mock__tideo-tab {
+  flex: 1; height: 14px;
+  background: var(--surface-2);
+  border-radius: 4px;
+}
+.mock__tideo-tab--active {
+  background: linear-gradient(135deg, rgba(0,110,255,.3), rgba(0,110,255,.15));
+  border: 1px solid rgba(0,110,255,.3);
+}
+
+/* Desk mockup */
+.mock--desk .mock__body { display: flex; gap: 8px; padding: 0; }
+.mock__desk-left {
+  width: 60px; padding: 8px 6px;
+  background: var(--surface);
+  display: flex; flex-direction: column; gap: 4px;
+  border-right: 1px solid var(--border);
+}
+.mock__desk-session {
+  height: 18px;
+  background: var(--surface-2);
+  border-radius: 4px;
+}
+.mock__desk-session--active {
+  background: linear-gradient(135deg, rgba(16,185,129,.3), rgba(16,185,129,.1));
+  border-left: 2px solid #10b981;
+}
+.mock__desk-right { flex: 1; padding: 8px; display: flex; flex-direction: column; gap: 5px; }
+.mock__desk-msg {
+  height: 12px; width: 70%;
+  background: var(--surface-2);
+  border-radius: 6px;
+  align-self: flex-start;
+}
+.mock__desk-msg--user {
+  width: 50%;
+  background: linear-gradient(135deg, rgba(16,185,129,.25), rgba(16,185,129,.1));
+  align-self: flex-end;
+}
+.mock__desk-input {
+  height: 16px;
+  background: var(--surface-2);
+  border-radius: 8px;
+  margin-top: auto;
+}
+
+/* WorkBuddy mockup */
+.mock--workbuddy .mock__body { padding: 0; }
+.mock__wb-screen { display: flex; flex-direction: column; height: 140px; }
+.mock__wb-header { height: 24px; background: var(--surface); border-bottom: 1px solid var(--border); }
+.mock__wb-content { flex: 1; padding: 8px; display: flex; flex-direction: column; gap: 6px; }
+.mock__wb-card {
+  height: 28px;
+  background: var(--surface-2);
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+.mock__wb-nav {
+  display: flex; gap: 0;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+.mock__wb-tab {
+  flex: 1; height: 20px;
+  background: var(--surface-2);
+}
+.mock__wb-tab--active {
+  background: linear-gradient(135deg, rgba(245,158,11,.2), rgba(245,158,11,.05));
+  border-top: 2px solid #f59e0b;
+}
+
+/* Horse mockup */
+.mock--horse .mock__body { padding: 8px; position: relative; }
+.mock__horse-list { display: flex; flex-direction: column; gap: 8px; }
+.mock__horse-item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px;
+  background: var(--surface-2);
+  border-radius: 8px;
+}
+.mock__horse-avatar {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(225,29,72,.2), rgba(225,29,72,.05));
+  border: 1px solid rgba(225,29,72,.2);
+  flex-shrink: 0;
+}
+.mock__horse-info { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+.mock__horse-name { height: 8px; width: 50%; background: var(--text-3); border-radius: 2px; opacity: .5; }
+.mock__horse-tag { height: 6px; width: 30%; background: var(--text-3); border-radius: 2px; opacity: .3; }
+.mock__horse-fab {
+  position: absolute; bottom: 12px; right: 12px;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e11d48, #e11d48cc);
+  box-shadow: 0 4px 12px rgba(225,29,72,.3);
 }
 
 /* ======= JOURNEY ======= */
