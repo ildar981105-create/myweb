@@ -119,7 +119,7 @@
         revealObs.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+  }, { threshold: 0.15, rootMargin: '0px 0px -80px 0px' });
 
   revealTargets.forEach(el => revealObs.observe(el));
 

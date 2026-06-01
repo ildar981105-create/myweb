@@ -1,5 +1,5 @@
 /* ===========================================
-   伊力达尔 — B端交互设计师作品集
+   L.D. — B端交互设计师作品集
    =========================================== */
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -986,8 +986,30 @@ img { display: block; max-width: 100%; }
   opacity: 1;
 }
 
-/* Scroll reveal for sections */
-.section__head,
+/* ======= SCROLL REVEAL — 稳定视觉重心 ======= */
+
+/* Section head: 原地淡入 + 微 scale，不做 Y 位移，保持视觉锚点稳定 */
+.section__head {
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity .6s var(--ease-out), transform .6s var(--ease-out);
+}
+/* Section head 装饰线动画 */
+.section__head::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  margin-top: 16px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  border-radius: 1px;
+  transition: width .8s var(--ease-out) .15s;
+}
+.section__head.in-view::after {
+  width: 48px;
+}
+
+/* 内容块: 小幅 Y 偏移 + scale 聚焦，视觉重心保持在中上 */
 .work-group__label,
 .work-item,
 .journey__item,
@@ -998,12 +1020,13 @@ img { display: block; max-width: 100%; }
 .contact__left,
 .contact__form {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity .7s var(--ease-out), transform .7s var(--ease-out);
+  transform: translateY(16px) scale(0.98);
+  transition: opacity .65s var(--ease-out), transform .65s var(--ease-out);
 }
+
 .in-view {
   opacity: 1 !important;
-  transform: translateY(0) !important;
+  transform: translateY(0) scale(1) !important;
 }
 
 /* Stagger children */
@@ -1013,13 +1036,13 @@ img { display: block; max-width: 100%; }
 .journey__item:nth-child(3) { transition-delay: .2s; }
 .journey__item:nth-child(4) { transition-delay: .3s; }
 .process__grid .process__step { 
-  opacity: 0; transform: translateY(20px);
+  opacity: 0; transform: translateY(12px) scale(0.98);
   transition: opacity .5s var(--ease-out), transform .5s var(--ease-out);
 }
-.process__grid.in-view .process__step:nth-child(1) { transition-delay: 0s; opacity: 1; transform: translateY(0); }
-.process__grid.in-view .process__step:nth-child(2) { transition-delay: .1s; opacity: 1; transform: translateY(0); }
-.process__grid.in-view .process__step:nth-child(3) { transition-delay: .2s; opacity: 1; transform: translateY(0); }
-.process__grid.in-view .process__step:nth-child(4) { transition-delay: .3s; opacity: 1; transform: translateY(0); }
+.process__grid.in-view .process__step:nth-child(1) { transition-delay: 0s; opacity: 1; transform: translateY(0) scale(1); }
+.process__grid.in-view .process__step:nth-child(2) { transition-delay: .1s; opacity: 1; transform: translateY(0) scale(1); }
+.process__grid.in-view .process__step:nth-child(3) { transition-delay: .2s; opacity: 1; transform: translateY(0) scale(1); }
+.process__grid.in-view .process__step:nth-child(4) { transition-delay: .3s; opacity: 1; transform: translateY(0) scale(1); }
 
 /* ======= RESPONSIVE ======= */
 @media (max-width: 900px) {
